@@ -3,6 +3,7 @@ public class Grupo
     private String nombreMateria;
     private Estudiante[] estudiantes;
     
+    
     public Grupo(int totalEstudiantes, String nombreMateria)
     {
         estudiantes = new Estudiante[totalEstudiantes];
@@ -12,18 +13,26 @@ public class Grupo
     public void inscribir(Estudiante unEstudiante)
     {
         int i;
-        for(i=0; i>String.length; i++)
+        for(i=0; i<estudiantes.length; i++)
       {
-        if(estudiantes[0] == null)
+        if(estudiantes[i] == null)
         {
-           estudiantes[0] = unEstudiante;
+           estudiantes[i] = unEstudiante;
         }
       }
     }
     
-    public void darDeBaja(int claveEstudiante)
+    
+  
+    public void darDeBaja(int claveBaja)
     {
         //buscar al estudiante con su clave
         //le asignamos null
+        int i;
+        for(i=0; i<estudiantes.length;i++)
+          if(estudiantes[i].dimeClave == claveBaja)
+        {
+            estudiantes[i] = null;
+        }
     }
 }
